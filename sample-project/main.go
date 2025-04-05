@@ -2,12 +2,10 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 )
 
 func main() {
-	f, _ := os.Open("sample.txt")
-	content, _ := ioutil.ReadAll(f)
+	content, _ := os.ReadFile("sample.txt")
 	fmt.Println(string(content))
 }
