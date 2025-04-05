@@ -1,5 +1,12 @@
 version: "2"
+
+issues:
+  fix: true
+
 linters:
+  enable:
+    - wsl
+
   settings:
     errcheck:
       check-blank: true
