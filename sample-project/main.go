@@ -6,6 +6,10 @@ import (
 )
 
 func main() {
-	content, _ := os.ReadFile("sample.txt")
+	content, err := os.ReadFile("sample.txt")
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
 	fmt.Println(string(content))
 }
