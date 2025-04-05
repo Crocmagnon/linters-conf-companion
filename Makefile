@@ -1,3 +1,9 @@
-.PHONY: run
+.PHONY: run install-linter lint
 run:
 	@cd sample-project && go run .
+
+install-linter:
+	@./install-linter
+
+lint:
+	golangci-lint run
