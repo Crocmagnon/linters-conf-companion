@@ -1,16 +1,21 @@
 package main
 
 import (
+	"context"
 	"fmt"
-	"os"
+	"time"
 )
 
 func main() {
-	content, err := os.ReadFile("sample.txt")
-	if err != nil {
-		fmt.Println(err)
-		return
+	start := time.Now()
+
+	ctx := context.Background()
+	ctx = context.WithValue(ctx, "foo", "bar")
+
+	for range 10_000 {
+		ctx = context.WithValue(ctx, "baz", "qux")
+		_ = ctx.Value("foo")
 	}
 
-	fmt.Println(string(content))
+	fmt.Println(time.Since(start))
 }
