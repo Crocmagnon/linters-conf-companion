@@ -15,8 +15,10 @@ git config --global alias.first '!git checkout $(git rev-list --max-parents=0 HE
 Then, walk the repo:
 ```shell
 git first
+git checkout demo-1
+git checkout demo-2
 git next
-git next
+git prev
 # ...
 ```
 
