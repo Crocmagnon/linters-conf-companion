@@ -2,6 +2,7 @@ package fatcontext
 
 import (
 	"go/ast"
+	"go/token"
 	"golang.org/x/tools/go/analysis"
 	"golang.org/x/tools/go/analysis/passes/inspect"
 	"golang.org/x/tools/go/ast/inspector"
@@ -51,6 +52,10 @@ func processBody(pass *analysis.Pass, body *ast.BlockStmt) {
 
 		if t.String() != "context.Context" {
 			continue
+		}
+
+		if assignStmt.Tok == token.DEFINE {
+			break
 		}
 	}
 }
