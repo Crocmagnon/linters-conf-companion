@@ -7,3 +7,6 @@ lint:
 
 test:
 	go test ./...
+
+build:
+	go build -o fatcontext-linter ./cmd/fatcontext
