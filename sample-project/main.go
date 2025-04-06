@@ -13,7 +13,7 @@ func main() {
 	ctx = context.WithValue(ctx, "foo", "bar")
 
 	for range 10_000 {
-		ctx = context.WithValue(ctx, "baz", "qux")
+		ctx = context.WithValue(ctx, "baz", "qux") // want "nested context in loop"
 		_ = ctx.Value("foo")
 	}
 
