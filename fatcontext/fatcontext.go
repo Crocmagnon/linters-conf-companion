@@ -22,8 +22,21 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	}
 
 	inspctr.Preorder(nodeFilter, func(node ast.Node) {
+		var body *ast.BlockStmt
 
+		switch typedNode := node.(type) {
+		case *ast.RangeStmt:
+			body = typedNode.Body
+		default:
+			return
+		}
+
+		processBody(pass, body)
 	})
 
 	return nil, nil
+}
+
+func processBody(pass *analysis.Pass, body *ast.BlockStmt) {
+
 }
