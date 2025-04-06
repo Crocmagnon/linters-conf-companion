@@ -17,5 +17,10 @@ func main() {
 		_ = ctx.Value("foo")
 	}
 
+	for i := 0; i < 10_000; i++ {
+		ctx = context.WithValue(ctx, "baz", "qux") // want "nested context in loop"
+		_ = ctx.Value("foo")
+	}
+
 	fmt.Println(time.Since(start))
 }
