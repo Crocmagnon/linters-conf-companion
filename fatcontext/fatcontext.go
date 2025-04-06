@@ -43,5 +43,14 @@ func processBody(pass *analysis.Pass, body *ast.BlockStmt) {
 		if !ok {
 			continue
 		}
+
+		t := pass.TypesInfo.TypeOf(assignStmt.Lhs[0])
+		if t == nil {
+			continue
+		}
+
+		if t.String() != "context.Context" {
+			continue
+		}
 	}
 }
