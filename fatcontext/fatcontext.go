@@ -57,5 +57,10 @@ func processBody(pass *analysis.Pass, body *ast.BlockStmt) {
 		if assignStmt.Tok == token.DEFINE {
 			break
 		}
+
+		pass.Report(analysis.Diagnostic{
+			Pos:     assignStmt.Pos(),
+			Message: "nested context in loop",
+		})
 	}
 }
