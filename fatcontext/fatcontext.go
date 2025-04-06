@@ -20,6 +20,7 @@ func run(pass *analysis.Pass) (interface{}, error) {
 
 	nodeFilter := []ast.Node{
 		(*ast.RangeStmt)(nil),
+		(*ast.ForStmt)(nil),
 	}
 
 	inspctr.Preorder(nodeFilter, func(node ast.Node) {
@@ -27,6 +28,8 @@ func run(pass *analysis.Pass) (interface{}, error) {
 
 		switch typedNode := node.(type) {
 		case *ast.RangeStmt:
+			body = typedNode.Body
+		case *ast.ForStmt:
 			body = typedNode.Body
 		default:
 			return
