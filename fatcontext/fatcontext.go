@@ -38,5 +38,10 @@ func run(pass *analysis.Pass) (interface{}, error) {
 }
 
 func processBody(pass *analysis.Pass, body *ast.BlockStmt) {
-
+	for _, stmt := range body.List {
+		assignStmt, ok := stmt.(*ast.AssignStmt)
+		if !ok {
+			continue
+		}
+	}
 }
