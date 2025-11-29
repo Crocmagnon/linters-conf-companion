@@ -24,3 +24,6 @@ git prev
 
 ## Conference list
 * [Gophercamp 2025](https://gophercamp.cz/)
+
+## Recordings
+* [Gophercamp 2025](https://www.youtube.com/watch?v=CYxyezY4k4Q)
