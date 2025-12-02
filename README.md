@@ -27,3 +27,4 @@ git prev
 
 ## Recordings
 * [Gophercamp 2025](https://www.youtube.com/watch?v=CYxyezY4k4Q)
+* [France DevOps (fr)](https://www.linkedin.com/events/votrecodem-ritemieux-offrez-lui7397630892384428032/)
